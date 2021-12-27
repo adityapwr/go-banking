@@ -4,6 +4,8 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/adityapwr/banking/domain"
+	"github.com/adityapwr/banking/service"
 	"github.com/gorilla/mux"
 )
 
@@ -11,11 +13,10 @@ import (
 func StartApp() {
 	// mux := http.NewServeMux()
 	router := mux.NewRouter()
-	router.HandleFunc("/greet", greet)
-	router.HandleFunc("/customers", getAllCustomers).Methods(http.MethodGet)
-	router.HandleFunc("/customers", createCustomer).Methods(http.MethodPost)
-	router.HandleFunc("/api/time", getTime).Methods(http.MethodGet)
 
-	router.HandleFunc("/customers/{customer_id:[0-9]+}", getCustomerId)
+	ch := CustomerHandlers{service: service.NewCustomerService(domain.NewCustomerRepositoryDb())}
+	router.HandleFunc("/customers", ch.getAllCustomers).Methods(http.MethodGet)
+	router.HandleFunc("/customers/{customer_id:[0-9]+}", ch.getCustomer).Methods(http.MethodGet)
+
 	log.Fatal(http.ListenAndServe("localhost:8080", router))
 }
