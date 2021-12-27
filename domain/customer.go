@@ -1,6 +1,6 @@
 package domain
 
-import "github.com/adityapwr/banking/errs"
+import "github.com/adityapwr/go-banking/errs"
 
 type Customer struct {
 	Id          string

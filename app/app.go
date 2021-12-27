@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/adityapwr/banking/domain"
-	"github.com/adityapwr/banking/service"
+	"github.com/adityapwr/go-banking/domain"
+	"github.com/adityapwr/go-banking/service"
 	"github.com/gorilla/mux"
 )
 

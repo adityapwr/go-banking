@@ -5,8 +5,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/adityapwr/banking/errs"
-
+	"github.com/adityapwr/go-banking/errs"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -46,7 +45,6 @@ func (d CustomerRepositoryDB) FindAll(status string) ([]Customer, *errs.AppError
 
 func (d CustomerRepositoryDB) ById(id string) (*Customer, *errs.AppError) {
 	customerSql := "SELECT customer_id, name, date_of_birth, city, zipcode, status FROM customers where customer_id = ?"
-
 	row := d.client.QueryRow(customerSql, id)
 	var c Customer
 	err := row.Scan(&c.Id, &c.Name, &c.DateofBirth, &c.City, &c.Pincode, &c.Status)
@@ -59,7 +57,6 @@ func (d CustomerRepositoryDB) ById(id string) (*Customer, *errs.AppError) {
 		}
 	}
 	return &c, nil
-
 }
 
 func NewCustomerRepositoryDb() CustomerRepositoryDB {

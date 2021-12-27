@@ -6,7 +6,7 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/adityapwr/banking/service"
+	"github.com/adityapwr/go-banking/service"
 )
 
 type Customer struct {

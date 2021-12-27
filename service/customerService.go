@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/adityapwr/banking/domain"
-	"github.com/adityapwr/banking/errs"
+	"github.com/adityapwr/go-banking/domain"
+	"github.com/adityapwr/go-banking/errs"
 )
 
 type CustomerService interface {

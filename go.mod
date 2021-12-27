@@ -1,4 +1,4 @@
-module github.com/adityapwr/banking
+module github.com/adityapwr/go-banking
 
 go 1.17
 
