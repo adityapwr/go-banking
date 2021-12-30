@@ -1,0 +1,2 @@
+export SERVER_ADDRESS=localhost
+export SERVER_PORT=8080

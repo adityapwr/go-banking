@@ -13,8 +13,8 @@ type AccountRepositoryDb struct {
 }
 
 func (d AccountRepositoryDb) Save(a Account) (*Account, *errs.AppError) {
-	sqlInsert := `INSERT INTO accounts (customer_id, opening_date, account_type, balance, status) VALUES (? , ? , ? , ? , ? )`
-	result, err := d.client.Exec(sqlInsert, a.CustomerId, a.OpeningDate, a.AccountType, a.Balance, a.Status)
+	sqlInsert := `INSERT INTO accounts (customer_id, opening_date, account_type, amount, status) VALUES (? , ? , ? , ? , ? )`
+	result, err := d.client.Exec(sqlInsert, a.CustomerId, a.OpeningDate, a.AccountType, a.Amount, a.Status)
 	if err != nil {
 		logger.Error("Error while inserting rows")
 		return nil, errs.NewUnexpectedError("unexpected database error")

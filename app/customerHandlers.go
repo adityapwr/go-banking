@@ -23,7 +23,7 @@ func (ch *CustomerHandlers) getAllCustomers(w http.ResponseWriter, r *http.Reque
 	status := r.URL.Query().Get("status")
 	customers, err := ch.service.GetAllCustomers(status)
 	if err != nil {
-		writeResponse(w, err.Code, err.AsMessage())
+		writeResponse(w, http.StatusInternalServerError, nil)
 	}
 	writeResponse(w, http.StatusOK, customers)
 }
@@ -31,7 +31,7 @@ func (ch *CustomerHandlers) getAllCustomers(w http.ResponseWriter, r *http.Reque
 func (ch *CustomerHandlers) getCustomer(w http.ResponseWriter, r *http.Request) {
 	customer, err := ch.service.GetCustomer(mux.Vars(r)["customer_id"])
 	if err != nil {
-		writeResponse(w, err.Code, err.AsMessage())
+		writeResponse(w, http.StatusInternalServerError, nil)
 	} else {
 		writeResponse(w, http.StatusOK, customer)
 	}
