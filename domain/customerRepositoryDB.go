@@ -3,8 +3,8 @@ package domain
 import (
 	"database/sql"
 
-	"github.com/adityapwr/go-banking/errs"
-	"github.com/adityapwr/go-banking/logger"
+	"github.com/adityapwr/banking-lib/errs"
+	"github.com/adityapwr/banking-lib/logger"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
 )

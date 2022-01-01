@@ -37,6 +37,10 @@ func StartApp() {
 	router.HandleFunc("/customers/{customer_id:[0-9]+}", ch.getCustomer).Methods(http.MethodGet)
 	router.HandleFunc("/customers/{customer_id:[0-9]+}/AddNewAccount", ah.AddNewAccount).Methods(http.MethodPost)
 	router.HandleFunc("/customers/{account_id:[0-9]+}/transaction", th.Withdraw).Methods(http.MethodPost)
+
+	authHandler := AuthorizationMiddleware{domain.NewAuthRepository()}
+	router.Use(authHandler.authorizationHandler())
+
 	SERVER_ADDRESS := os.Getenv("SERVER_ADDRESS")
 	SERVER_PORT := os.Getenv("SERVER_PORT")
 	log.Fatal(http.ListenAndServe(fmt.Sprintf("%s:%s", SERVER_ADDRESS, SERVER_PORT), router))

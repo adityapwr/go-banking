@@ -3,8 +3,8 @@ package domain
 import (
 	"strconv"
 
-	"github.com/adityapwr/go-banking/errs"
-	"github.com/adityapwr/go-banking/logger"
+	"github.com/adityapwr/banking-lib/errs"
+	"github.com/adityapwr/banking-lib/logger"
 	"github.com/jmoiron/sqlx"
 )
 

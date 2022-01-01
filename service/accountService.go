@@ -5,7 +5,7 @@ import (
 
 	"github.com/adityapwr/go-banking/domain"
 	"github.com/adityapwr/go-banking/dto"
-	"github.com/adityapwr/go-banking/errs"
+	"github.com/adityapwr/banking-lib/errs"
 )
 
 type AccountService interface {

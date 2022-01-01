@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/adityapwr/banking-lib/logger"
 	"github.com/adityapwr/go-banking/dto"
-	"github.com/adityapwr/go-banking/logger"
 	"github.com/adityapwr/go-banking/service"
 	"github.com/gorilla/mux"
 )

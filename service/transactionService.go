@@ -3,10 +3,10 @@ package service
 import (
 	"time"
 
+	"github.com/adityapwr/banking-lib/errs"
+	"github.com/adityapwr/banking-lib/logger"
 	"github.com/adityapwr/go-banking/domain"
 	"github.com/adityapwr/go-banking/dto"
-	"github.com/adityapwr/go-banking/errs"
-	"github.com/adityapwr/go-banking/logger"
 )
 
 type TranscationService interface {

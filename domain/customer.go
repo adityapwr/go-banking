@@ -1,8 +1,8 @@
 package domain
 
 import (
+	"github.com/adityapwr/banking-lib/errs"
 	"github.com/adityapwr/go-banking/dto"
-	"github.com/adityapwr/go-banking/errs"
 )
 
 type Customer struct {

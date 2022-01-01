@@ -15,13 +15,13 @@ type TransactionHandlers struct {
 
 func (th TransactionHandlers) Withdraw(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	account_id := vars["account_id"]
+	accountId := vars["account_id"]
 	var transaction dto.TransactionRequest
 	if err := json.NewDecoder(r.Body).Decode(&transaction); err != nil {
 		// writeResponse(w, err.Code, err.Message)
 		writeResponse(w, http.StatusInternalServerError, nil)
 	}
-	transaction.AccountId = account_id
+	transaction.AccountId = accountId
 	reponse, err := th.service.WithdrawTransaction(transaction)
 	if err != nil {
 		writeResponse(w, err.Code, err.Message)

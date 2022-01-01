@@ -1,3 +1,5 @@
+github.com/adityapwr/banking-lib v1.0.0 h1:C0paChUwgP177A/uH23Bl1Y2ombu2KYvlP3JwpJRbIo=
+github.com/adityapwr/banking-lib v1.0.0/go.mod h1:jRLERjxiUSDCbwQM19F91wO16h1ad/j8RN64rGKNnp8=
 github.com/benbjohnson/clock v1.1.0/go.mod h1:J11/hYXuz8f4ySSvYwY0FKfm+ezbsZBKZxNJlLklBHA=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

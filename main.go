@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github.com/adityapwr/banking-lib/logger"
 	"github.com/adityapwr/go-banking/app"
-	"github.com/adityapwr/go-banking/logger"
 )
 
 func main() {
