@@ -21,7 +21,7 @@ func sanityCheck() {
 
 //Start starts the web server
 func StartApp() {
-	sanityCheck()
+	// sanityCheck()
 	// mux := http.NewServeMux()
 	router := mux.NewRouter()
 
@@ -30,19 +30,28 @@ func StartApp() {
 	accountRepositoryDb := domain.NewAccountRepositoryDb(dbClient)
 	transactionRepositoryDb := domain.NewTransactionRepositoryDb(dbClient)
 
+	// customerRepositoryStub := domain.NewCustomerrepositoryStub()
+
 	ch := CustomerHandlers{service: service.NewCustomerService(customerRepositoryDb)}
 	ah := AccountHandlers{service: service.NewAccountService(accountRepositoryDb)}
 	th := TransactionHandlers{service: service.NewTransactionService(transactionRepositoryDb)}
+	qh := QoDHandler{domain.NewQoDRepository()}
 	router.HandleFunc("/customers", ch.getAllCustomers).Methods(http.MethodGet)
 	router.HandleFunc("/customers/{customer_id:[0-9]+}", ch.getCustomer).Methods(http.MethodGet)
 	router.HandleFunc("/customers/{customer_id:[0-9]+}/AddNewAccount", ah.AddNewAccount).Methods(http.MethodPost)
 	router.HandleFunc("/customers/{account_id:[0-9]+}/transaction", th.Withdraw).Methods(http.MethodPost)
-
+	router.HandleFunc("/qod", qh.GetQoD).Methods(http.MethodGet)
 	authHandler := AuthorizationMiddleware{domain.NewAuthRepository()}
 	router.Use(authHandler.authorizationHandler())
 
-	SERVER_ADDRESS := os.Getenv("SERVER_ADDRESS")
-	SERVER_PORT := os.Getenv("SERVER_PORT")
+	SERVER_ADDRESS, ok := os.LookupEnv("SERVER_ADDRESS")
+	if !ok {
+		SERVER_ADDRESS = "localhost"
+	}
+	SERVER_PORT, ok := os.LookupEnv("SERVER_PORT")
+	if !ok {
+		SERVER_PORT = "8081"
+	}
 	log.Fatal(http.ListenAndServe(fmt.Sprintf("%s:%s", SERVER_ADDRESS, SERVER_PORT), router))
 }
 
