@@ -1,0 +1,33 @@
+{
+    "success": {
+        "total": 1
+    },
+    "contents": {
+        "quotes": [
+            {
+                "quote": "Successful people appear to be traveling along one continual, successful road. What is not apparent is the perseverance it takes following each defeat to keep you on that road. No one I know of has ever experienced one success after another without defeats, failures, disappointments, and frustrations galore along the way. Learning to overcome those times of agony is what separates the winners from the losers.",
+                "length": "412",
+                "author": "G. Kingsley Ward",
+                "tags": {
+                    "0": "failure",
+                    "1": "inspire",
+                    "2": "perseverance",
+                    "3": "success",
+                    "5": "winning"
+                },
+                "category": "inspire",
+                "language": "en",
+                "date": "2022-01-06",
+                "permalink": "https://theysaidso.com/quote/g-kingsley-ward-successful-people-appear-to-be-traveling-along-one-continual-suc",
+                "id": "5dCTjGryXcEf_OQaDIIR4AeF",
+                "background": "https://theysaidso.com/img/qod/qod-inspire.jpg",
+                "title": "Inspiring Quote of the day"
+            }
+        ]
+    },
+    "baseurl": "https://theysaidso.com",
+    "copyright": {
+        "year": 2024,
+        "url": "https://theysaidso.com"
+    }
+}
